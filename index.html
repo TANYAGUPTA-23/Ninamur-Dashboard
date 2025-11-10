@@ -852,7 +852,7 @@
     <div class="status_text">@ PROFORMA SENT</div>
   </label>
 
-  <div class="payment-action-card payment-block__card dialog-only" role="menu" aria-hidden="true">
+  <div class="payment-action-card payment-block__card dialog-only send_proforma" role="menu" aria-hidden="true">
     <ul class="action-option-list payment-block__list">
       <li class="action-option-item group-end"><a href="#" class="action-option-text">Send Proforma E-mail</a></li>
     </ul>
@@ -874,7 +874,7 @@
   </label>
 
   <!-- dropdown card -->
-  <div class="payment-action-card payment-block__card dialog-only" role="menu" aria-hidden="true">
+  <div class="payment-action-card payment-block__card dialog-only send_proforma" role="menu" aria-hidden="true">
     <ul class="action-option-list payment-block__list">
       <li class="action-option-item group-end">
         <a href="#" class="action-option-text">“Ask 2nd Payment E-mail”</a>
@@ -892,13 +892,15 @@
                     
                     <div class="od-status__additional">
                         <div class="od-status__checkbox-item">
-                            <input type="checkbox" id="cancelled" />
-                            <label for="cancelled"><div class="status_text2">CANCELLED</div></label>
-                        </div>
-                        <div class="od-status__checkbox-item">
-                            <input type="checkbox" id="frozen" />
-                            <label for="frozen"><div class="status_text2">FROZEN</div></label>
-                        </div>
+    <input type="checkbox" id="cancelled" />
+    <label for="cancelled" class="status_text2">CANCELLED</label>
+</div>
+
+<div class="od-status__checkbox-item">
+    <input type="checkbox" id="frozen" />
+    <label for="frozen" class="status_text2">FROZEN</label>
+</div>
+
                     </div>
                     </div>
                     </div>
@@ -1294,7 +1296,7 @@ RETURNED</th>
         <path d="M13 1L7 7L1 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </span>
-    <ul class="custom-dropdown-menu">
+    <ul style="  top: -600%;" class="custom-dropdown-menu">
       <li>Full Pack</li>
       <li>Half Pack</li>
       <li>Loose Items</li>
@@ -1356,7 +1358,7 @@ RETURNED</th>
         <path d="M13 1L7 7L1 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </span>
-    <ul class="custom-dropdown-menu">
+    <ul style="  top: -600%;" class="custom-dropdown-menu">
       <li>Full Pack</li>
       <li>Half Pack</li>
       <li>Loose Items</li>
@@ -1587,9 +1589,9 @@ RETURNED</th>
         <div class="data-group-row top-payment-controls">
             <div class="field-container control-group-wide">
                 <label class="field-label">PRICE RATE</label>
-                <div class="selector-box rate-selector">
-                    <select style="padding-right: 51px;">
-                        <option>2020 - Spain Wholesale</option>
+                <div  class="selector-box rate-selector">
+                    <select >
+                        <option>2020 - Spain</option>
                     </select>
                     <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13 1L7 7L1 0.999999" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>

@@ -13,6 +13,8 @@ body{
 .od-container{
   margin:0 auto;
   /* display:grid; */
+  display: flex;
+  flex-direction: column;
   gap:14px;
   grid-template-columns: 1fr;
   padding: 20px 0px;
@@ -603,6 +605,30 @@ option {
   font-style: italic;
 }
 
+.od-status__checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.od-status__checkbox-item input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.status_text2 {
+  cursor: pointer;
+}
+.od-status__checkbox-item input[type="checkbox"] {
+  opacity: 0; /* hides checkbox visually */
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+
 
 /* Unchecked Checkbox Box */
 .od-status__item input[type="checkbox"] + .od-status__label::before {
@@ -745,6 +771,63 @@ option {
     padding-top: 0;
     border-top: none;
 }}
+
+.od-status__checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* space between checkbox and text */
+    color: #888888;
+    user-select: none;
+}
+
+/* Hide native checkbox but keep it clickable */
+.od-status__checkbox-item input[type="checkbox"] {
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Label styling */
+.od-status__checkbox-item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 24px; /* space for custom checkbox */
+}
+
+/* Custom checkbox box */
+.od-status__checkbox-item label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Checked state */
+.od-status__checkbox-item input[type="checkbox"]:checked + label::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 5px;
+    height: 8px;
+    border-right: 1.2px solid #000;
+    border-bottom: 1.2px solid #000;
+    transform: rotate(45deg);
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 1100px) {
@@ -1025,8 +1108,21 @@ font-size: 19px;
 .order-table-wrapper {
     overflow-x: auto;
     border-radius: 8px;
+    
 }
 
+/* Select the 4th and 5th .custom-dropdown-menu inside parent */
+/* .custom-dropdown > .custom-dropdown-menu:nth-of-type(4),
+.custom-dropdown > .custom-dropdown-menu:nth-of-type(5) {
+
+} */
+
+
+
+
+.send_proforma{
+  width: max-content !important;
+}
 .order-table-wrapper .order-table {
     width: 100%;
     /* border-collapse: collapse; */
@@ -1116,10 +1212,15 @@ font-size: 19px;
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
 
 .order-preview-cell .order-product-img-wrapper {
     position: relative;
+}
+
+.order-col-incident{
+  cursor: pointer;
 }
 
 .order-preview-cell .order-no-lenses-badge {
@@ -1455,7 +1556,7 @@ padding: 16px;
 }
 
 .legal-name-field{
-   width: 63%;
+   width: 62%;
 }
 
 .data-group-row {
@@ -1524,7 +1625,14 @@ padding: 16px;
   position: relative;
   display: flex;
   align-items: center;
-  width: 60%; /* dynamic width */
+  width: 57%; /* dynamic width */
+}
+
+.selector-box.rate-selector{
+  width: 71%;
+}
+.control-group-wide{
+  width: 100%;
 }
 
 .selector-box select {
@@ -2564,8 +2672,8 @@ margin: 0;
 
         /* Images */
         .modal-image {
-                    width: 1111px;
-                    height: 271px;
+                    /* width: 1111px; */
+                    max-height: 271px;
                     border-bottom: 1px solid #E9E9E9;
         }
 
@@ -2909,6 +3017,7 @@ letter-spacing: 0%;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 400;
+  font-size: 14px;
 }
 
 .payment-block__list .action-option-item:last-child {
@@ -3082,9 +3191,11 @@ a{
   list-style: none;
   padding: 5px 0;
   margin: 0;
-  min-width: 120px;
+  /* min-width: 120px; */
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  z-index: 100;
+  z-index: 999;
+  text-align: left;
+  cursor: pointer;
 }
 
 .custom-dropdown-menu li {
@@ -3132,4 +3243,30 @@ a{
   text-align: center;
 }
 
+}
+
+@media(max-width: 1900px){
+
+.invoice-number-display {
+  padding: 4px;
+}
+
+.static-value-text2 {
+    padding: 4px;
+}
+
+.value-box {
+  padding: 4px;
+}
+
+.attribute-cell {
+  width: 100%;
+}
+
+.selector-box.method-selector{
+  width: 70%;
+}
+.selector-box.rate-selector{
+  width: 80%;
+}
 }
