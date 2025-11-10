@@ -678,3 +678,5 @@ input.addEventListener('input', () => {
     input.value = val + '%';
   }
 });
+
+

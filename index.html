@@ -1453,13 +1453,13 @@ SHIPPED</th>
     <div class="payment-action-card payment-block__card" role="menu" aria-hidden="true">
       <ul class="action-option-list payment-block__list">
         <!-- Group 1 -->
-        <li class="action-option-item group-end">
-          <a style="border: 1px solid #EBEBEB; padding: 8px 16px; border-radius: 8px;" href="#" class="action-option-text">123556000ST</a>
+        <li class="action-option-item ">
+          <a style=" text-align: center; border: 1px solid #EBEBEB; padding: 8px 16px; border-radius: 8px;" href="#" class="action-option-text">123556000ST</a>
         </li>
 
         <!-- Group 2 -->
         <li class="action-option-item">
-          <a href="#" class="action-option-text">Track Package</a>
+          <a style="text-align: center;" href="#" class="action-option-text">Track Package</a>
         </li>
       </ul>
     </div>
@@ -1504,28 +1504,38 @@ SHIPPED</th>
 
                     <div class="data-group-row">
 <div class="field-container data-group-col-small">
-<label class="field-label payment-block payment-container" style="display: flex; align-items: center; gap: 16px;">
+  <label class="field-label payment-block payment-container" style="display: flex; align-items: center; gap: 16px;">
   <a href="#" class="action-link payment-block__trigger" style="font-size: 12px;">
     SHIPPING COST
   </a>
-  <input 
-    type="text" 
+
+  <!-- editable div instead of input -->
+  <div 
     class="input-display quarter-col-display shipment-cost-value" 
-    value="10,00€" 
+    contenteditable="true" 
     style="width: 110px; text-decoration: none !important;"
-  />
+  >
+    10,00€
+  </div>
+
+  <div class="payment-action-card payment-block__card dialog-only" role="menu" aria-hidden="true">
+    <ul class="action-option-list payment-block__list">
+      <li class="action-option-item"><a href="#">Calculate Default Ship. Cost</a></li>
+      <li class="action-option-item"><a href="#">Manage Ship Cost</a></li>
+    </ul>
+  </div>
 </label>
 
 
-
-    <div class="payment-action-card payment-block__card dialog-only" role="menu" aria-hidden="true">
-      <ul class="action-option-list payment-block__list">
-        <li class="action-option-item"><a href="#">Calculate Default Ship. Cost</a></li>
-        <li class="action-option-item"><a href="#">Manage Ship Cost</a></li>
-      </ul>
-    </div>
-  </label>
+  <!-- move dropdown outside the label -->
+  <div class="payment-action-card payment-block__card dialog-only" role="menu" aria-hidden="true">
+    <ul class="action-option-list payment-block__list">
+      <li class="action-option-item"><a href="#">Calculate Default Ship. Cost</a></li>
+      <li class="action-option-item"><a href="#">Manage Ship Cost</a></li>
+    </ul>
+  </div>
 </div>
+
 
 
                         <div class="field-container data-group-col-main delivery-method-selection">
@@ -1585,11 +1595,15 @@ SHIPPED</th>
   <div class="payment-container payment-block">
     <a href="#" class="action-link payment-portal-link payment-block__trigger">WEB PAYMENT LINK</a>
 
-    <div class="payment-action-card payment-block__card" role="menu" aria-hidden="true">
-      <ul class="action-option-list payment-block__list">
+    <div class="payment-action-card payment-block__card web_card" role="menu" aria-hidden="true">
+      <ul class="action-option-list payment-block__list web_list">
         <li class="action-option-item group-end"><a href="#" class="action-option-text">Generate Web Payment</a></li>
+      </ul>
+      <ul class="action-option-list payment-block__list web_list">
         <li class="action-option-item"><a href="#" class="action-option-text">Update Web Payment</a></li>
         <li class="action-option-item group-end"><a href="#" class="action-option-text">Disable Web Payment</a></li>
+      </ul>
+      <ul class="action-option-list payment-block__list web_list">
         <li class="action-option-item"><a href="#" class="action-option-text">Copy Partial Link</a></li>
         <li class="action-option-item group-end"><a href="#" class="action-option-text">Copy Full Link</a></li>
       </ul>

@@ -3316,7 +3316,10 @@ a{
 
 input:focus,
 textarea:focus,
-select:focus {
+select:focus,
+div:focus {
     outline: none;                /* remove focus outline */
     box-shadow: none;             /* remove any shadow */
+    cursor: pointer;
 }
+
