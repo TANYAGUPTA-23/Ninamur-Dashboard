@@ -724,47 +724,45 @@
 
                     </div>
 
-                    <div class="od-general__row">
-                        <label class="od-field middle">
-  Seller
-  <div class="od-field__select" style="width: 290px;">
-    <select id="seller" class="od-select">
-      <option>STANDARD ORDER</option>
-      <option>ONLINE STORE</option>
-      <option>SHOWROOM</option>
-      <option>RETAIL PARTNER</option>
-    </select>
-    <!-- Your SVG -->
-    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M13 1L7 7L1 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+<div class="od-general__row">
+  <label class="od-field middle">
+    Seller
+    <div class="od-field__select">
+      <select id="seller" class="od-select">
+        <option>STANDARD ORDER</option>
+        <option>ONLINE STORE</option>
+        <option>SHOWROOM</option>
+        <option>RETAIL PARTNER</option>
+      </select>
+      <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 1L7 7L1 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </label>
+
+  <label class="od-field middle">
+    Agent
+    <div class="od-field__select">
+      <select id="agent" class="od-select">
+        <option>FAIR</option>
+        <option>DISTRIBUTOR</option>
+        <option>DIRECT CLIENT</option>
+        <option>AGENCY NETWORK</option>
+      </select>
+      <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 1L7 7L1 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </label>
+
+  <div class="od-field od-field--commission middle">
+    <label class="od-field__label">Agent commission %</label>
+    <div class="od-commission">
+      <button class="od-commission__pill" aria-hidden="true"></button>
+    </div>
   </div>
-</label>
+</div>
 
-<label class="od-field middle">
-  Agent
-  <div class="od-field__select" style="width: 290px;">
-    <select id="agent" class="od-select">
-      <option>FAIR</option>
-      <option>DISTRIBUTOR</option>
-      <option>DIRECT CLIENT</option>
-      <option>AGENCY NETWORK</option>
-    </select>
-    <!-- Your SVG -->
-    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M13 1L7 7L1 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </div>
-</label>
-
-
-                        <div class="od-field od-field--commission middle">
-                        <label class="od-field__label ">Agent commission %</label>
-                        <div class="od-commission ">
-                            <button class="od-commission__pill " aria-hidden="true"></button>
-                        </div>
-                        </div>
-                    </div>
                     </div>
                 </section>
 
@@ -1478,24 +1476,25 @@ RETURNED</th>
   </div>
 </label>
 
-                        <div style="width: 459px;" class="input-display full-row-input delivery-address-text">
+                        <div style="width: 82%;" class="input-display full-row-input delivery-address-text">
                             Calle Madera 46, Bajo Ext. Derecha, 28004 Madrid SPAIN
                         </div>
                     </div>
-                    <div class="data-group-row">
-                        <div class="field-container data-group-col-main">
-                            <label class="field-label">FISCAL B. NAME</label>
-                            <div style="width: 259px;" class="input-display half-col-display background-fill legal-name-field">
-                                COMPANY X, SA
-                            </div>
-                        </div>
-                        <div class="field-container data-group-col-small vat-id-group">
-                            <label class="field-label">VAT N°</label>
-                            <div style="width: 136px;" class="input-display quarter-col-display background-fill vat-number-value">
-                                862210499T001
-                            </div>
-                        </div>
-                    </div>
+<div class="data-group-row">
+  <div class="field-container data-group-col-main">
+    <label class="field-label">FISCAL B. NAME</label>
+    <div class="input-display half-col-display background-fill legal-name-field">
+      COMPANY X, SA
+    </div>
+  </div>
+  <div class="field-container data-group-col-small vat-id-group">
+    <label class="field-label">VAT N°</label>
+    <div class="input-display quarter-col-display background-fill vat-number-value">
+      862210499T001
+    </div>
+  </div>
+</div>
+
                     <div class="data-group-row">
 <div class="field-container data-group-col-small">
   <label class="field-label payment-block payment-container">
@@ -1518,9 +1517,9 @@ RETURNED</th>
 
                         <div class="field-container data-group-col-main delivery-method-selection">
                             <label class="field-label">DELIVERY TYPE</label>
-                            <div style="width: 230px;"  class="selector-box half-col-selector">
+                            <div style="width: 68%;"  class="selector-box half-col-selector">
                                 <select>
-                                    <option style="width: 236px;" >Courier Service</option>
+                                    <option style="width: 68%;" >Courier Service</option>
                                 </select>
                                 <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M13 1L7 7L1 0.999999" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -1553,13 +1552,14 @@ RETURNED</th>
                             <div class="input-display half-col-display carrier-selection-group">
                                 COURIER SERVICE 
                                 <div class="selector-box carrier-selector">
-                                    <select>
-                                        <option>UPS</option>
-                                    </select>
-                                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M13 1L7 7L1 0.999999" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-    </svg>
-                                </div>
+  <select>
+    <option>UPS</option>
+  </select>
+  <svg class="custom-arrow" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13 1L7 7L1 0.999999" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  </svg>
+</div>
+
                             </div>
                         </div>
                     </div>

@@ -210,6 +210,8 @@ font-size: 13px;
     border-radius: 10px;
     width: 100%;
     justify-content: space-between;
+
+    flex-wrap: wrap;
 }
 
 .od-card {
@@ -239,6 +241,7 @@ font-size: 13px;
     border-radius: 24px;
     padding: 16px;
     gap: 14px;
+    margin: auto;
 }
 
 .od-card__header {
@@ -266,6 +269,7 @@ font-size: 13px;
 
 .middle{
     width: 100%;
+    flex: 1.5;
 }
 
 .od-field--label {
@@ -470,6 +474,7 @@ option {
 .od-field--commission {
     display: flex;
     gap: 12px;
+    flex: 1;
 }
 
 .od-commission__pill {
@@ -513,6 +518,7 @@ option {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 12px;
 }
 
 .od-status__select {
@@ -714,12 +720,40 @@ option {
     box-sizing: border-box;
 }
 
+@media (max-width: 1602px) {
+
+    .status_order_whole{
+      flex-direction: column;
+      gap: 30px;
+    }
+        .od-top__status{
+          flex: 1 ;
+        }
+
+        .od-status{
+          flex-direction: row;
+          /* flex-wrap: wrap; */
+        }
+        .od-status__list {
+          flex-direction: row;
+          /* flex-wrap: wrap; */
+        }
+        .od-status__additional{
+          padding-top: 30px;
+          border-top: none;
+        }
+
+
+.od-status__notes {
+    padding-top: 0;
+    border-top: none;
+}}
+
 /* Responsive Adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
     .od-top {
         flex-direction: column;
-        padding: 0 16px;
-        gap: 16px;
+        /* padding: 0 16px; */
     }
     
     .od-top__general,
@@ -733,17 +767,35 @@ option {
         margin: 0;
     }
     
-    .od-general__row,
-    .od-general__row--tight {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .od-general__row{
         gap: 24px;
+        flex-direction: column !important;
     }
-    
-    .od-general__row--tight .od-field--urgent {
-        /* If urgent box is alone in a row of 2, make it span both columns */
-        /* grid-column: span 2;  */
-    }
+
+            .od-status{
+          flex-direction: column;
+          /* flex-wrap: wrap; */
+        }
+        .od-status__list {
+          flex-direction: column;
+          /* flex-wrap: wrap; */
+        }
+        .od-status__additional{
+          padding-top: 30px;
+          border-top: none;
+        }
+        .od-status__pill-wrap{
+          width: 25%;
+        }
+
 }
+
+@media (max-width: 1100px) {
+          .od-status__pill-wrap{
+          width: 30%;
+        }
+}
+
 
 @media (max-width: 600px) {
     .od-top {
@@ -1261,6 +1313,7 @@ input[type="checkbox"]:checked::after {
     background-color: #f5f5f5;
     padding: 20px 0;
     padding-bottom: 0;
+    flex-wrap: wrap;
 }
 
 /* --- Panel/Card Styles --- */
@@ -1401,6 +1454,11 @@ padding: 16px;
 .background-fill {
     background-color: #f0f0f0; 
     border: none;
+    /* width: 68%; */
+}
+
+.legal-name-field{
+   width: 63%;
 }
 
 .data-group-row {
@@ -1424,9 +1482,14 @@ padding: 16px;
     /* flex: 1; */
 }
 
+.vat-id-group{
+  flex: 1;
+}
+
 .vat-number-value {
     font-weight: 700;
-    padding-left:  20px;
+    /* padding-left:  20px; */
+    width: 77%;
 }
 /* .shipment-cost-value {
     background-color: #fff;
@@ -1437,6 +1500,7 @@ padding: 16px;
 
 .carrier-selection-group {
     border: none;
+    flex: 1;
     padding: 0;
     font-weight: 400;
     font-size: 12px;
@@ -1454,11 +1518,33 @@ padding: 16px;
     color: #888;
     background-color: #fff;
 }
-.carrier-selector {
+/* .carrier-selector {
     flex: 1;
     width: 192px;
+} */
+
+.selector-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 60%; /* dynamic width */
 }
 
+.selector-box select {
+  width: 100%;
+  appearance: none;  /* hide default arrow */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.selector-box .custom-arrow {
+  position: absolute;
+  right: 10px;
+  pointer-events: none; /* arrow does not block clicks */
+  stroke-width: 1.5; /* thinner if you like */
+}
 
 
 .shipment-date-field {
@@ -1470,7 +1556,7 @@ padding: 16px;
     border: 1px solid #EBEBEB;
   border-radius: 8px;
   padding: 8px 12px;
-  width: 160px;
+  /* width: 160px; */
 }
 
 .date-input {
@@ -3022,3 +3108,5 @@ a{
   width: 12px;   /* arrow width */
   height: auto;   /* arrow height */
 }
+
+
