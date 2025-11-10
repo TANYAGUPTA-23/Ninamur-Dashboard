@@ -12,7 +12,7 @@ body{
 /* Container */
 .od-container{
   margin:0 auto;
-  display:grid;
+  /* display:grid; */
   gap:14px;
   grid-template-columns: 1fr;
   padding: 20px 0px;
@@ -541,10 +541,7 @@ option {
 }
 
 /* Status Notes List */
-.od-status__notes {
-    padding-top: 10px;
-    border-top: 1px solid #eeeeee;
-}
+
 
 .od-status__list {
     list-style: none;
@@ -3110,3 +3107,29 @@ a{
 }
 
 
+@media(max-width: 1820px){
+  .upload-zone-drop {
+  padding: 1px;}
+}
+
+@media(max-width:800px){
+  .top-payment-control{
+    flex-direction: column;
+  }
+
+.payment-attributes-grid {
+  flex-direction: column;
+}
+
+
+}
+
+@media(max-width: 800px){
+  .payment-schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 15px;
+  text-align: center;
+}
+
+}
