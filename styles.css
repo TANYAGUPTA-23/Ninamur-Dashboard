@@ -1,0 +1,3024 @@
+/* Replaced CSS variables with concrete values to avoid :root usage */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#f4f7f8,#eef3f6);
+  color:#223;
+  padding:28px;
+}
+
+
+
+/* Container */
+.od-container{
+  margin:0 auto;
+  display:grid;
+  gap:14px;
+  grid-template-columns: 1fr;
+  padding: 20px 0px;
+}
+
+/* --- Header Container --- */
+.od-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* max-height: 48px;  */
+}
+
+.od-left {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.od-back {
+    color: #000000; 
+    font-size: 12px;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.15s;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    /* border-bottom: 0.5px solid black; */
+    padding: 12px 0;
+    gap: 4px;
+    font-style: italic;
+    /* font-weight: 400; */
+}
+
+.od-id-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.od-id-number {
+    font-size: 22.41px;
+    font-weight: 500;
+    color: #4D4B4C;
+    line-height: 1;
+}
+
+.od-id-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+        color: #4D4B4C;
+}
+
+.od-sku {
+font-weight: 300;
+font-style: italic;
+font-size: 13px;
+}
+
+.od-sku-link {
+    text-decoration: underline;
+    transition: color 0.15s;
+    text-underline-offset: 2px;
+    color: #4D4B4C;
+}
+
+.od-sync {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 4px;
+    user-select: none;
+}
+
+.od-sync input[type="checkbox"] {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #aaaaaa;
+    border-radius: 3px;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.od-sync input[type="checkbox"]:checked {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.od-sync input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+}
+
+.od-sync-text {
+        color: #4D4B4C;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 300;
+    /* color: #888888; */
+}
+
+.od-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.od-chat-pill {
+    background: #00BAFF;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.15s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.od-chat-label {
+    opacity: 0.9;
+}
+
+.od-unread {
+    position: relative;
+    color: #EB3838;
+
+}
+
+.od-action-icons {
+    display: flex;
+    gap: 8px;
+}
+
+.od-action-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.15s, transform 0.1s;
+    position: relative;
+    padding: 0;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03); 
+}
+
+/* Selects the FIRST action button (e.g., to make it light blue) */
+.od-action-btn:nth-child(1) {
+    background: #F1C96514;
+
+}
+
+/* Selects the SECOND action button (e.g., to add a slight border) */
+.od-action-btn:nth-child(2) {
+    background: #9F65F114;
+
+}
+
+/* Selects the THIRD action button (e.g., to change its size slightly) */
+.od-action-btn:nth-child(3) {
+    background: #FF494914;
+
+}
+
+/* Selects the FOURTH action button */
+.od-action-btn:nth-child(4) {
+    background: #4C49FF14;
+    /* Add unique styles here */
+}
+
+/* --- Global Card and Layout Styling --- */
+
+/* Container for the two main cards (General Info and Order Status) */
+.od-top {
+    display: flex;
+    gap: 20px; 
+    border-radius: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.od-card {
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 16px;
+    gap: 14px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.od-top__general {
+    /* flex: 2; 
+    min-width: 400px; */
+    border-radius: 24px;
+    flex:1.09515;
+    padding: 16px;
+    gap: 14px;
+
+    /* max-width: 972px; */
+    width: 100%;
+}
+
+.od-top__status {
+    flex:0.6;
+    border-radius: 24px;
+    padding: 16px;
+    gap: 14px;
+}
+
+.od-card__header {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #716F70;
+    gap: 4px;
+}
+
+.od-card__title {
+    font-size: 19px;
+    font-weight: 500;
+    color: #716F70;
+}
+
+/* --- Field Styling (Shared) --- */
+.od-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.middle{
+    width: 100%;
+}
+
+.od-field--label {
+    gap: 12px;
+}
+
+
+.date_heading , .od_field{
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+}
+
+/* Selects the second column field, and then the .date_heading element inside it. */
+.od-general__row--tight > :nth-child(2) .date_heading {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+label{
+    display: flex; 
+}
+
+
+/* --- Field Base Styles --- */
+.od-field__select,
+.od-field__input {
+  padding: 10px 8px;
+  border: 1px solid #EBEBEB;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600; /* Bold text for value */
+  color: #000000;
+  gap: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Dropdown Specific */
+.od-field__select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  width: 100%;
+}
+
+/* Select Element Styling */
+.od-select {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  appearance: none; /* hides default browser arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 26px; /* space for custom SVG */
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Remove outline */
+.od-select:focus {
+  outline: none;
+}
+
+/* Custom SVG styling */
+.od-field__select svg {
+  position: absolute;
+  right: 10px;
+  pointer-events: none; /* allows clicking dropdown */
+  transition: transform 0.2s ease;
+}
+
+/* Rotate arrow when focused (optional) */
+.od-select:focus + svg {
+  transform: rotate(180deg);
+}
+
+/* Focus border highlight */
+.od-field__select:focus-within {
+  border-color: #6ecaf8;
+  box-shadow: 0 0 0 2px rgba(110, 202, 248, 0.2);
+}
+
+/* Option text */
+option {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+
+.od-status__pill-wrap .od-status__select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 150px;
+}
+
+.od-status__pill-wrap .od-select {
+  width: 100%;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.od-status__pill-wrap .od-select:focus {
+  outline: none;
+  border-color: #6ecaf8;
+  box-shadow: 0 0 0 2px rgba(110, 202, 248, 0.2);
+}
+
+.od-status__pill-wrap .od-status__select svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; /* make it clickable */
+}
+
+
+/* --- General Info Section --- */
+.od-general {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.od-general__row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+
+.od-general__row--tight {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    /* Items will take space based on their content and won't grow/shrink by default */
+}
+
+/* URGENT field container */
+.od-field--urgent {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.od-urgent {
+  cursor: pointer;
+  user-select: none;
+  background-color: #fff; /* default white */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  gap: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Checkbox */
+.od-urgent__checkbox {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #6ecaf8;
+}
+
+/* Default badge text */
+.od-urgent__badge {
+  color: #000;
+}
+
+/* When checkbox is checked — use :has() to affect parent */
+.od-urgent:has(.od-urgent__checkbox:checked) {
+  background-color: #6ecaf8;
+  color: #fff;
+}
+
+
+/* IMPORTANT: remove/disable any pseudo-element that draws another checkbox */
+/* e.g. delete or comment out any rules like:
+   .od-urgent__badge::before { ... }
+   .od-urgent__checkbox { display: none; }
+*/
+
+/* COMMISSION Field */
+.od-field--commission {
+    display: flex;
+    gap: 12px;
+}
+
+.od-commission__pill {
+
+    height: 40px;
+    width: 79px;
+    border: none;
+    border-radius: 999px;
+    background: #F69D9A;
+    /* background-color: #f0c3c3;  */
+    cursor: default;
+}
+
+/* --- Order Status Specific Styles --- */
+.od-status {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.od_field2 {
+    width: 100%;
+}
+
+
+
+.od-status__row {
+    width: 100%;
+    display: flex;
+        gap: 12px;
+    /* gap: 24px; */
+}
+
+/* Status Pill Select (CUTTING) */
+.od-status__pill-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.status_order_whole{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.od-status__select {
+    height: 40px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 999px;
+    color: #000; 
+    background: #F6916E;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 600;
+    gap: 24px;
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Status Notes List */
+.od-status__notes {
+    padding-top: 10px;
+    border-top: 1px solid #eeeeee;
+}
+
+.od-status__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.od-status__item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555555;
+    user-select: none;
+}
+
+#estShipDate , #maxShipDate{
+    padding-right: 28px;
+}
+
+/* Custom Checkbox Styling for PROFORMA / CLAIMED */
+.od-status__item input[type="checkbox"] {
+    display: none;
+}
+
+.od-status__item label.od-status__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* line-height: 1.2; */
+    position: relative;
+}
+
+/* Add padding-left only to odd items */
+.od-status__list > .od-status__item:nth-child(odd) label.od-status__label {
+    padding-left: 24px; /* your desired padding */
+}
+
+/* Remove padding-left for even items */
+.od-status__list > .od-status__item:nth-child(even) label.od-status__label {
+    padding-left: 8px;
+}
+
+
+.status_text{
+    font-weight: 300;
+    
+}
+
+.od-status__list > li:nth-child(3) .status_text , .od-status__list > li:nth-child(1) .status_text {
+    text-decoration: underline;
+    text-underline-offset: 1px;
+}
+
+.status_text2 {
+  font-weight: 300;
+  font-style: italic;
+}
+
+
+/* Unchecked Checkbox Box */
+.od-status__item input[type="checkbox"] + .od-status__label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Checked Checkmark */
+.od-status__item input[type="checkbox"]:checked + .od-status__label::after {
+    content: '✓';
+    position: absolute;
+    left: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+}
+
+/* Checked Checkbox Blue background */
+.od-status__item #proforma:checked + .od-status__label::before,
+.od-status__item #claim2:checked + .od-status__label::before {
+    background-color: #3895e7;
+    border-color: #3895e7;
+}
+
+/* Colored Dot Styling (for CONFIRMED payments) */
+.od-status__dot {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+
+}
+
+.od-status__dot--green {
+    background: #B7DBA4;
+    border: none;
+
+}
+
+.od-status__dot--red {
+    background: #F69D9A;
+    border: none;
+
+}
+
+/* Ensure list labels align with dots (no extra padding) */
+.od-status__dot + .od-status__label {
+    padding-left: 0;
+}
+
+/* The last two list items are styled separately in the HTML provided (not in the list, but below it) 
+   I will simulate the final two items (CANCELLED, FROZEN) to show up as checkboxes next to each other.
+   Based on the screenshot, they appear below the status list, and I'll use simple list items for them.
+*/
+.od-status__additional {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+    padding-top: 10px;
+    border-top: 1px solid #eeeeee;
+    margin-top: 10px;
+}
+
+/* Re-apply custom checkbox styles for the two items in the screenshot below the list, 
+   simulating the CANCELLED and FROZEN text seen in the image's status section. */
+.od-status__checkbox-item {
+    display: flex;
+    align-items: center;
+    color: #888888;
+    user-select: none;
+}
+
+.od-status__checkbox-item input[type="checkbox"] {
+     display: none;
+}
+
+.od-status__checkbox-item label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* line-height: 1.2; */
+    padding-left: 24px; 
+    position: relative;
+}
+
+.od-status__checkbox-item label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .od-top {
+        flex-direction: column;
+        padding: 0 16px;
+        gap: 16px;
+    }
+    
+    .od-top__general,
+    .od-top__status {
+        flex: none; 
+        width: 100%;
+        min-width: initial;
+    }
+    
+    .od-card {
+        margin: 0;
+    }
+    
+    .od-general__row,
+    .od-general__row--tight {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+    
+    .od-general__row--tight .od-field--urgent {
+        /* If urgent box is alone in a row of 2, make it span both columns */
+        /* grid-column: span 2;  */
+    }
+}
+
+@media (max-width: 600px) {
+    .od-top {
+        padding: 0 12px;
+    }
+    .od-general__row,
+    .od-general__row--tight,
+    .od-status__row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .od-general__row--tight .od-field--urgent {
+        grid-column: span 1; 
+    }
+    
+    .od-status__additional {
+        flex-direction: column;
+    }
+}
+
+/* --- 1. Variables and Base Styles (variables replaced with concrete values) */
+
+
+
+.order-container {
+    width: 100%;
+    /* max-width: 1547px; */
+    background-color: #ffffff; /* card-bg */
+    border-radius: 20px;
+    padding: 16px;
+    gap: 16px;
+}
+
+/* --- 2. Header and Navigation --- */
+.order-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-summary-text {
+    font-size: 14px;
+    color: #716F70;
+
+    font-weight: 600;
+}
+
+.order-tab-nav {
+    display: flex;
+    gap: 16px;
+}
+
+tbody{
+    gap: 8px;
+}
+
+tbody > tr:nth-child(odd) {
+  background: #FAFAFA; /* light background for odd rows */
+}
+
+tbody > tr:nth-child(even) {
+    background: #F2F2F2;
+
+}
+table tbody tr td:first-child,
+table thead tr th:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+table tbody tr td:last-child,
+table thead tr th:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.order-table tbody tr td:first-child {
+  padding-left: 12px;
+}
+
+.order-table thead tr th:first-child {
+  padding-left: 12px;
+}
+
+
+
+table{
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+.order-tab-nav .order-tab {
+    padding: 8px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.order-tab-active {background: #17B7FF;
+
+    color: #ffffff; /* card-bg */
+}
+
+.order-tab-inactive {background: #F4F4F4;
+
+    color: #000; /* grey-text */
+    /* margin-left: 8px; */
+}
+
+    /* --- Content area --- */
+    .order-body {
+      margin-top: 6px;
+    }
+
+    .section-title {
+font-weight: 600;
+font-size: 19px;
+      color: #716f70;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #716F70;
+      margin-bottom: 16px;
+      margin-left: 4px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 101px 1fr;
+      align-items: start;
+      padding-right: 10px;
+    }
+
+    .label-left {
+      font-size: 14px;
+      color: #000;
+      font-weight: 400;
+      padding-top: 6px;
+      padding-left: 4px;
+    }
+
+    .textarea-wrap {
+      position: relative;
+    }
+
+    textarea.extras-desc {
+      width: 100%;
+      min-height: 174px;
+      resize: vertical;
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid #ececec;
+      background: #fff;
+      font-size: 14px;
+      color: #222;
+      box-shadow: inset 0 1px 0 rgba(0,0,0,0.02);
+    }
+
+    textarea.extras-desc::placeholder {
+      color: #4D4B4C;
+        font-size: 13px;
+        font-weight: 300;
+      font-style: italic;
+    }
+
+    /* --- Bottom summary row --- */
+    .summary-row {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 16px 16px 20px 4px;
+      flex-wrap: wrap;
+    }
+
+    .summary-item {
+      display: flex;
+      align-items: center;
+      gap: 29px;
+      min-width: 160px;
+    }
+
+    .summary-label {
+      font-size: 14px;
+      color: #000;
+      font-weight: 400;
+    }
+
+    .pill {
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-weight: 600;
+      box-shadow: none;
+      border: 1px solid #EBEBEB;
+      min-width: 120px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .pill.primary {
+      color: #13181b;
+    }
+
+    .pill.accent {
+      background: #eeeef0;
+      color: #111827;
+    }
+
+    .discount-input {
+      width: 100px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #EBEBEB;
+      font-weight: 700;
+      text-align: center;
+      font-size: 15px;
+      background: #fff;
+    }
+
+  
+
+    /* Responsive tweaks */
+    @media (max-width: 760px) {
+      .form-grid { grid-template-columns: 120px 1fr; }
+      .summary-row { gap: 10px; }
+      .pill { min-width: 100px; padding: 10px 12px; }
+    }
+
+/* --- 3. Table Structure and General Styling --- */
+.order-table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+.order-table-wrapper .order-table {
+    width: 100%;
+    /* border-collapse: collapse; */
+    /* min-width: 1300px; */
+    
+}
+
+
+
+.order-table-wrapper .order-table th,
+.order-table-wrapper .order-table td {
+    padding: 2px 3.7px;
+    text-align: left;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.order-col{
+    gap: 2px;
+}
+
+.order-col-id{
+    font-size: 12px !important;
+    text-decoration: underline;
+    offset: 2px;
+}
+.order-table-wrapper .order-table th {
+    background: #EEECE9;
+    padding: 10px 0px;
+    color: #000; /* grey-text */
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.order-table-wrapper .order-table tbody tr:hover {
+    background-color: #f0f4ff; /* light-blue-bg */
+}
+
+/* --- 4. Column Sizing and Alignment --- */
+/* .order-col-actions { width: 50px; }
+.order-col-id { width: 80px; }
+.order-col-product { width: 200px; }
+.order-col-size { width: 80px; }
+.order-col-unit-price, .order-col-total-price { width: 100px; }
+.order-col-discount, .order-col-qty { width: 70px; text-align: center; }
+.order-col-preview { width: 150px; }
+.order-col-lenses, .order-col-packaging, .order-col-extra, .order-col-laser, .order-col-label, .order-col-stock, .order-col-shipped, .order-col-returned { 
+    width: 70px; 
+    text-align: center; 
+} */
+
+/* Utility for center alignment in cells */
+.order-text-center {
+    text-align: center;
+}
+
+/* --- 5. Text and Badge Styles --- */
+.order-price-text {
+}
+
+.order-discount-text {
+}
+
+.order-size-extra {
+    font-weight: 700;
+}
+
+/* Product Cell Specifics */
+/* .order-product-name-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+} */
+
+.order-product-name-cell .order-product-id , .order-product-name-cell .order-product-details{
+    font-weight: 300;
+    font-size: 11px;
+}
+
+.order-table-wrapper .order-table td {
+    text-align: center !important;
+}
+
+/* --- 6. Preview and Image Styles --- */
+.order-preview-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-preview-cell .order-product-img-wrapper {
+    position: relative;
+}
+
+.order-preview-cell .order-no-lenses-badge {
+    color: #dc2626; 
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 20;
+}
+
+.order-preview-cell .order-product-img {
+    width: 40px;
+    height: 20px;
+    object-fit: contain;
+    border: 1px solid #e5e7eb; /* border-color */
+    border-radius: 4px;
+}
+
+.order-preview-cell .order-product-side-view {
+    width: 60px;
+    height: 10px;
+    object-fit: contain;
+}
+
+/* --- 7. Icon and Button Styles --- */
+.order-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6b7280; /* grey-text */
+    font-size: 16px;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.order-icon-btn:hover {
+    color: #333333; /* dark-text */
+}
+
+.order-delete-btn {
+    color: #dc2626; /* red-color */
+    font-size: 18px; 
+}
+
+
+
+.order-check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 400;     /* thinner + */
+  line-height: 0;       /* centers the symbol vertically */
+  font-family: monospace;
+}
+
+
+
+.order-stock-return-icon {
+    color: #6b7280; /* grey-text */
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #C3C3C3;
+  border-radius: 3px;
+  cursor: pointer;
+  background: #fff;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #fff;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4.5px;   /* shifted slightly for perfect center */
+  top: 2px;      /* small adjustment to center vertically */
+  width: 5px;    /* smaller tick width */
+  height: 8px;   /* smaller tick height */
+  border-right: 1.2px solid #000;  /* thin line */
+  border-bottom: 1.2px solid #000;
+  transform: rotate(45deg);
+}
+
+.full_pack {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px; /* space between text and arrow */
+}
+
+.full_pack span {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px; 
+}
+
+.full_pack svg {
+  width: 12px; /* slightly smaller */
+  height: auto;
+}
+
+.full_pack svg path {
+  stroke-width: 1.2; /* thinner arrow */
+  stroke: #000;      /* arrow color */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+
+
+/* --- 8. Footer/Add Button (Floating Action Button) --- */
+.order-footer-add-button {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 50;
+}
+
+.order-footer-add-button .order-add-btn {
+    background-color: #3b82f6; /* primary-blue */
+    color: #ffffff; /* card-bg */
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+    transition: background-color 0.2s, transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-footer-add-button .order-add-btn:hover {
+    background-color: #2563eb; /* primary-blue-hover */
+    transform: scale(1.05);
+}
+
+.bottom_add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: #17B7FF;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 0;
+  font-family: monospace;
+  padding: 8px;
+}
+
+
+/* custom-styles.css */
+
+/* Global Reset and Typography */
+
+
+.main-layout-wrapper {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    /* max-width: 1547px; */
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    padding-bottom: 0;
+}
+
+/* --- Panel/Card Styles --- */
+.info-panel {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.logistics-box {
+    display: flex;
+    flex-direction: column;
+    flex: 3; 
+    min-width: 400px;
+opacity: 1;
+gap: 10px;
+border-radius: 24px;
+padding: 16px;
+
+}
+
+.payment-box {
+    flex: 3; 
+    /* min-width: 450px; */
+    display: flex;
+    flex-direction: column;
+gap: 10px;
+border-radius: 24px;
+padding: 16px;
+
+}
+
+.totals-box {
+    display: flex;
+    flex-direction: column;
+    flex: 1.5; 
+opacity: 1;
+gap: 14px;
+border-radius: 24px;
+padding: 16px;
+
+}
+
+.panel-title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #716F70;
+    padding-bottom: 8px;
+}
+
+.panel-title-bar h2 {
+        font-size: 19px;
+    font-weight: 500;
+    color: #716F70;
+}
+
+.action-link {
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000; 
+}
+
+/* --- Form/Input Elements --- */
+.field-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.field-label {
+    display: block;
+    color: #000;
+    font-size: 12px;
+}
+
+/* wrapper shared styles you already have */
+.selector-box,
+.method-selector,
+.input-display,
+.schedule-date-text,
+.amount-entry,
+.invoice-number-display {
+  border: 1px solid #EBEBEB;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  /* line-height: 1.2; */
+  position: relative; /* important for absolute SVG */
+}
+
+/* make select fill wrapper and leave room for arrow */
+.method-select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding-right: 45px; /* right padding for SVG space */
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  appearance: none;           /* hide native arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* place the SVG on the right, visually over the select */
+.select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* allows clicks to pass through to the select (no JS) */
+}
+
+/* focus outline for accessibility */
+.method-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(110,202,248,0.2);
+  border-radius: 6px;
+}
+
+
+.delivery-address-text {
+    background-color: #fff;
+    border: 1px solid #EBEBEB;
+    font-weight: 600;
+    padding-bottom: 30px;
+}
+
+.background-fill {
+    background-color: #f0f0f0; 
+    border: none;
+}
+
+.data-group-row {
+    display: flex;
+    gap: 15px;
+    /* align-items: flex-end; */
+}
+
+/* Logistics Specific Layout */
+.logistics-box .field-container.data-group-col-main {
+    gap: 12px;
+    flex: 1;
+}
+.logistics-box .field-container.data-group-col-small {
+    gap: 12px;
+    /* flex: 1; */
+}
+
+.field-container.data-group-col-small {
+    gap: 12px;
+    /* flex: 1; */
+}
+
+.vat-number-value {
+    font-weight: 700;
+    padding-left:  20px;
+}
+/* .shipment-cost-value {
+    background-color: #fff;
+    font-weight: 500;
+    text-align: right;
+    justify-content: flex-end;
+} */
+
+.carrier-selection-group {
+    border: none;
+    padding: 0;
+    font-weight: 400;
+    font-size: 12px;
+    color: #000;
+    background: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-input-box {
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: #888;
+    background-color: #fff;
+}
+.carrier-selector {
+    flex: 1;
+    width: 192px;
+}
+
+
+
+.shipment-date-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #fff;
+
+    border: 1px solid #EBEBEB;
+  border-radius: 8px;
+  padding: 8px 12px;
+  width: 160px;
+}
+
+.date-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  padding-right: 28px; /* leaves space for the icon */
+}
+.od-date-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.od-date-field:hover {
+  border-color: #bcbcbc;
+}
+
+.num_date {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  font-family: "Inter", sans-serif;
+}
+
+/* calendar icon */
+.od-date-field svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  stroke: #666;
+  transition: stroke 0.2s ease;
+}
+
+.od-date-field:hover svg {
+  stroke: #000;
+}
+.custom-date-input {
+  position: relative;
+  width: 180px;
+  padding: 10px 36px 10px 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+}
+
+/* Hide the browser's default calendar icon */
+.custom-date-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Position your custom SVG */
+.custom-calendar-icon {
+  position: relative;
+  left: -28px;
+  top: 4px;
+  pointer-events: none; /* makes sure click still opens calendar */
+}
+
+/* hide default calendar icon */
+.date-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* custom icon */
+.date-icon {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* so clicking still opens calendar */
+}
+
+.date-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: #333;
+}
+
+.od-field__input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 10px;
+  width: fit-content;
+  gap: 6px;
+}
+
+/* Date input styling */
+.od-date-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* hide native calendar icon (Chrome, Edge, etc.) */
+.od-date-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* SVG calendar icon positioning */
+.od-field__input svg {
+  position: absolute;
+  right: 10px;
+  pointer-events: none; /* allow clicks to reach input */
+}
+
+/* Optional: hover/focus styles */
+.od-date-input:focus {
+  outline: none;
+}
+
+.od-field__input:focus-within {
+  border-color: #6ecaf8;
+  box-shadow: 0 0 0 2px rgba(110, 202, 248, 0.2);
+}
+
+
+/* Select Dropdown Styling */
+/* .selector-box {
+    position: relative;
+    padding-right: 30px !important; 
+} */
+
+.selector-box select {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 12px;
+    color: #000;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.selector-box .pull-down-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333; 
+    pointer-events: none;
+}
+.tax-selector {
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+.tax-selector select {
+    text-align: center;
+}
+
+
+/* --- Payment Specific Layout --- */
+
+.top-payment-controls {
+    display: flex;
+    /* align-items: flex-start; */
+}
+/* .payment-box .field-container.control-group-wide {
+    flex: 1;
+} */
+
+.payment-attributes-grid {
+    display: flex;
+    gap: 8px;
+}
+
+.attribute-cell {
+    margin-bottom: 0; 
+    gap: 8px;
+}
+
+.value-box {
+    border: 1px solid #EBEBEB;
+  border-radius: 8px;
+  padding: 7px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 12px;
+}
+
+.divider {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.static-value-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+}
+
+.static-value-text2 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    background: #F1F1F1;
+    padding: 7px 14px;
+
+    border-radius: 8px;
+    border: 1px solid #EBEBEB;
+}
+
+.invoice-number-display {
+    background-color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    background: #F1F1F1;
+    padding: 7px 14px;
+    border-radius: 8px;
+
+    border: 1px solid #EBEBEB;
+}
+
+/* Payment Schedules */
+.payment-schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    text-align: center;
+}
+
+.schedule-entry-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.schedule-entry-unit .field-label{
+    font-weight: 700;
+    text-align: left;
+}
+
+.schedule-date-text {
+    border: 1px solid #EBEBEB;
+    padding: 8px 29px;
+    font-weight: 700;
+    font-size: 12px;
+    color: #000;
+
+    border-radius: 8px;
+}
+
+.amount-entry {
+    border: 1px solid #EBEBEB;
+    padding: 8px 40px;
+    font-weight: 700;
+    font-size: 12px;
+    color: #000;
+    border-radius: 8px;
+}
+
+.proof-document-preview {
+    width: 100%;
+    height: 90px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 5px;
+}
+.image-thumbnail-placeholder {
+    width: 90%;
+    height: 90%;
+    background-color: #e6e6e6; 
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #999;
+}
+
+.upload-zone-drop {
+    width: 100%;
+    height: 72px;
+    color: #680909;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffadaa; 
+    font-style: italic;
+    font-size: 12px;
+    text-align: center;
+    padding: 8px 20px;
+}
+
+/* --- Totals Specific Layout --- */
+.totals-box .panel-title-bar {
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 8px 0; */
+    font-size: 12px;
+    color: #000;
+    font-weight: 400;
+}
+
+.summary-value {
+    font-weight: 700;
+    color: #000;
+    font-size: 14px;
+}
+
+.line-divider-style {
+    border-bottom: 0.31px solid #000;
+    padding-bottom: 14px;
+}
+
+.total-price-line {
+    font-size: 12px;
+    color: #000;
+}
+.total-price-line .summary-value {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.discount-line {
+    /* color: #000; */
+    color:  #8F8F8F;
+    font-weight: 500;
+    font-style: italic;
+
+}
+.discount-line .summary-value {
+     color:  #8F8F8F;
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+.chat-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #01010166;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Main Chat Card */
+.chat-card {
+    width: 640px;
+    height: 802px;
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px 16px;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.chat-header h1 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #716F70;
+
+
+}
+
+.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Message Container */
+.chat-messages {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Message Block */
+.message-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.message-metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.description {
+    font-weight: 400;
+    font-size: 12px;
+    color: #6D6D6D;
+}
+
+
+.chat-bubble {
+    background: #F5F5F5;
+    /* height: 64px; */
+    font-size: 16px;
+    line-height: 17px;
+    opacity: 1;
+    border-radius: 0 12px 12px 12px;
+    padding: 16px;
+
+}
+
+
+/* Input Area */
+.chat-input-area {
+    padding: 0 24px;
+    /* border-top: 1px solid #EAECF0; */
+    /* background-color: #fff; */
+    display: flex;
+    gap: 21px;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 12px 16px;
+    padding-bottom: 56px;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #101828;
+}
+
+.chat-input:focus {
+    outline: none;
+    border-color: #84CAFF;
+    box-shadow: 0px 0px 0px 4px rgba(208, 213, 221, 0.2);
+}
+
+.chat-input::placeholder {
+    font-weight: 400;
+    font-style: Italic;
+    font-size: 14px;
+    color: #434343;
+}
+
+.send-button {
+    width: 68px;
+    height: 55px;
+    /* background: #1570EF; */
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Delete Button */
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.chat-box {
+    cursor: pointer;
+}
+
+
+.order-table .incident-col {
+  display: none;
+}
+
+/* When table has .show-incident, show them */
+.order-table.show-incident .incident-col {
+  display: table-cell;
+}
+
+/* visual niceties */
+.order-col-incident { vertical-align: middle; text-align: center; }
+.order-col-incident svg { width: 16px; height: 16px; display: inline-block; }
+
+
+
+/* ==== INCIDENT MODAL STYLES ==== */
+.incident-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.incident-modal.active {
+  display: flex;
+}
+
+/* Background overlay */
+.incident-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* darker, smoother dim */
+  transition: opacity 0.25s ease;
+}
+
+
+/* Dialog box */
+.incident-dialog {
+  position: relative;
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  max-width: 640px;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+/* Header */
+.incident-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #E9E9E9;
+}
+
+.incident-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #716F70;
+
+}
+
+.incident-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Body layout */
+.incident-body {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  padding: 21px 0;
+}
+
+.incident-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.incident-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.incident-field select,
+.incident-field input[type="date"],
+.incident-field textarea {
+opacity: 1;
+border-radius: 8px;
+border-width: 1px;
+padding-top: 10px;
+padding-right: 16px;
+padding-bottom: 10px;
+padding-left: 16px;
+border: 1px solid #EBEBEB;
+}
+
+.checkbox {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.incident-notes textarea {
+  width: 100%;
+  height: 70px;
+  resize: none;
+font-weight: 400;
+font-style: Italic;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0%;
+gap: 200px;
+opacity: 1;
+border-radius: 8px;
+border-width: 1px;
+padding-top: 10px;
+padding-right: 16px;
+padding-bottom: 10px;
+padding-left: 16px;
+
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.label-incident-type{
+font-weight: 400;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #000;
+padding-bottom: 8px;
+}
+
+.label-commercial {
+font-weight: 400;
+font-style: Medium;
+font-size: 12px;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #000;
+
+}
+
+
+
+
+/* Container setup: Allows the icon to be positioned absolutely within it */
+.incident-field .date-input {
+  position: relative;
+  display: inline-block; /* Or block, depending on your layout */
+      opacity: 1;
+    border-radius: 8px;
+    border-width: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border: 1px solid #EBEBEB;
+}
+
+/* 1. Hide the default calendar icon and make the click area visible */
+.date-input input[type="date"]::-webkit-calendar-picker-indicator {
+  /* Make the native icon invisible */
+  opacity: 0;
+  
+  /* Make it cover the entire input area */
+  width: 100%; 
+  height: 100%;
+  
+  /* Position it absolutely on top of the input */
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  /* Keep the pointer active so the user can click it to open the calendar */
+  cursor: pointer;
+  
+  /* Ensure the hidden indicator is above the custom icon */
+  z-index: 2; 
+}
+
+/* 2. Style the input itself (optional but recommended) */
+.date-input input[type="date"] {
+  /* Remove default browser styling that might interfere (especially for Firefox) */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* Add padding to the right to visually make room for your SVG */
+  padding-right: 30px; 
+}
+
+/* 3. Position the custom SVG icon */
+.incident-field .date-icon {
+  position: absolute;
+  
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px; 
+  
+  z-index: 1; 
+  
+  pointer-events: none; 
+}
+
+
+/* 1. Setup the Wrapper */
+.custom-select-container {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+    border-radius: 8px;
+    border-width: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+/* 2. Style and Hide the Native Arrow on the Select Element */
+.custom-select-dropdown {
+  /* Hide the native arrow in Webkit (Chrome/Safari) */
+  -webkit-appearance: none;
+  /* Hide the native arrow in Firefox */
+  -moz-appearance: none;
+  /* Standard property to hide native arrow/UI controls */
+  appearance: none;
+  
+  /* Ensure the select box takes up the full width/height of its container */
+  width: 100%;
+  height: 100%;
+  
+  /* Remove default border and background, as the container (.custom-select-container) handles them */
+  border: none;
+  background: transparent;
+  
+  /* Add padding to the right to make visual space for your custom SVG */
+  padding: 8px 30px 8px 10px; /* Adjust padding as needed (30px on the right for the arrow) */
+  
+  /* Optional: Target IE 10+ to remove their native button/arrow */
+  /* This is not supported in modern IE versions, but good for older/legacy support */
+  /* ::-ms-expand is technically a part of the select and would need to be styled */
+}
+
+/* Optional: Target IE 10+ to remove their native button/arrow */
+.custom-select-dropdown::-ms-expand {
+    display: none;
+}
+
+
+/* 3. Position the Custom SVG Icon */
+.custom-select-arrow {
+  /* Overlay the icon relative to the wrapper */
+  position: absolute;
+  /* Place the icon on the right edge. Adjust '10px' as needed. */
+  right: 10px; 
+  /* Center the icon vertically */
+  top: 50%;
+  transform: translateY(-50%);
+  
+  /* IMPORTANT: Ensures clicks go through the icon to open the dropdown */
+  pointer-events: none; 
+  
+  /* Set a high z-index to ensure it sits on top of the select element */
+  z-index: 10; 
+}
+
+
+
+
+.incident-static-details {
+  /* Mimic the incident-row layout */
+  display: flex;
+  justify-content: flex-start;
+  gap: 52px;
+  /* Add padding to vertically space it from the header and body */
+  padding: 21px 0; 
+  border-bottom: 1px solid #E9E9E9; /* Add a separator line */
+}
+
+.incident-detail-field {
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Space between label and data */
+}
+
+.incident-detail-field label {
+  /* Style for "Incident From Order" and "From Product" labels */
+  font-size: 14px;
+  font-weight: 400;
+  color: #716F70; /* Use a slightly muted color for labels */
+  margin-bottom: 4px;
+}
+
+.id_date2 {
+  /* Style for the actual data */
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.incident-detail-field .order-id {
+font-weight: 600;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0%;
+text-decoration: underline;
+text-decoration-style: solid;
+
+}
+
+.incident-detail-field .order-date {
+font-weight: 600;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0%;
+color: #6E6E6E;
+
+
+}
+
+
+/* --- ADJUSTED incident-body STYLING --- */
+/* If you want the body padding to reflect the screenshot, 
+   you might need to reduce the top padding in incident-body
+   since we added padding in incident-static-details. */
+.incident-body {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  padding: 21px 0; /* Keep this if you want the vertical gap */
+}
+
+.product_para{
+font-weight: 600;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0%;
+color: #6E6E6E;
+
+}
+
+.custom-select-dropdown{
+    font-weight: 600;
+}
+
+/* Modal Container */
+.product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* darker, smoother dim */
+  transition: opacity 0.25s ease;
+
+    &.active {
+        display: flex;
+    }
+
+    /* Backdrop */
+    .modal-backdrop {
+            position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #01010166;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    }
+
+    /* Modal Content Box */
+    .modal-content {
+
+        display: flex
+;
+    gap: 25px;
+        position: relative;
+        background: #fff;
+        border-radius: 32px;
+        max-width: 1160px;
+        width: 90%;
+        padding: 24px;
+        z-index: 1001;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        animation: scaleIn 0.3s ease-out;
+
+        /* Header */
+        .modal-header {
+            display: flex;
+            padding: 0;
+            align-items: center;
+            border-bottom: 1px solid #EBEBEB;
+            padding-bottom: 24px;
+
+            .modal-sku {
+
+
+font-weight: 700;
+font-style: Bold;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 0%;
+color: #716F70;
+
+
+            }
+
+            .modal-description {
+                flex-grow: 1;
+font-weight: 300;
+font-style: Light;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0.02px;
+vertical-align: middle;
+color: #000000;
+margin: 0;
+
+
+            }
+
+            .modal-close-btn {
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                margin-left: auto;
+            }
+        }
+
+        /* Images */
+        .modal-image {
+                    width: 1111px;
+                    height: 271px;
+                    border-bottom: 1px solid #E9E9E9;
+        }
+
+        /* Options */
+        .modal-options {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping of options themselves */
+}
+
+.modal-option {
+    flex: 1; /* Equal width for all options */
+    display: flex; /* Arrange label and input horizontally */
+    align-items: center; /* Vertically center label + input */
+    gap: 8px; /* Space between label and input */
+    min-width: 200px; /* Prevent option from becoming too small */
+}
+
+.modal-option label {
+    flex-shrink: 0; /* Prevent label from shrinking */
+    white-space: nowrap; /* Keep label text in one line */
+}
+
+.modal-option select,
+.modal-option input[type="text"] {
+    flex: 1; /* Input fills remaining space */
+    min-width: 0; /* Allow input to shrink if necessary */
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+     /* Extra info in single line */
+.modal-extra {
+    display: flex; /* Vertically center the label with textarea */
+    gap: 10px;            /* Space between label and textarea */
+}
+
+.modal-extra .option-label{
+
+padding-top: 8px;
+}
+
+.modal-extra textarea {
+    flex: 1;              /* Take remaining space */
+    min-height: 40px;  
+gap: 200px;
+opacity: 1;
+border-radius: 8px;
+border-width: 1px;
+padding-top: 8px;
+padding-right: 16px;
+padding-bottom: 8px;
+padding-left: 16px;
+font-weight: 400;
+font-size: 14px;
+line-height: 15.14px;
+letter-spacing: 0%;
+
+
+}
+
+    }
+    
+}
+
+
+.option-label {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  white-space: nowrap;     /* Prevent label from wrapping */
+}
+
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;             /* Take remaining space */
+}
+
+.custom-select-wrapper select {
+  width: 100%;
+  height: 40px;
+  padding-right: 30px;     /* Space for the arrow */
+  border: 1px solid #EBEBEB;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  appearance: none;        /* Remove default arrow */
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: block;          /* Always visible */
+}
+
+
+/* Animation */
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+
+
+
+.payment-container {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.payment-portal-link {
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+  color: #000;
+}
+
+.payment-action-card {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  outline: none;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 200px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  display: none;
+  z-index: 9999;
+  transform-origin: top left;
+  transform: scaleY(0.96);
+  transition: transform 0.14s ease, opacity 0.12s ease;
+  opacity: 0;
+}
+
+.payment-action-card.is-visible {
+  display: block;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.action-option-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.action-option-item {
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+
+.od-status__item label.od-status__label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 24px;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.action-option-item {
+  padding: 12px 16px;
+  /* border-bottom: 1px solid #D1D1D1; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  text-underline-offset: 2.9px;
+}
+
+.action-option-item.group-end {
+  border-bottom: 1px solid #D1D1D1;
+}
+
+.action-option-item:last-child {
+  border-bottom: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.action-option-item:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.action-option-text {
+  text-decoration: underline;
+  color: #000;
+  font-size: 14px;
+  display: block;
+}
+
+@media (max-width: 420px) {
+  .payment-action-card {
+    left: 0;
+    right: 0;
+    width: 90vw;
+    max-width: none;
+  }
+}
+
+.payment-portal-link,
+.action-option-text,
+.payment-portal-link:link,
+.payment-portal-link:visited,
+.payment-portal-link:active,
+.payment-portal-link:hover,
+.payment-portal-link:focus,
+.action-option-text:link,
+.action-option-text:visited,
+.action-option-text:active,
+.action-option-text:hover,
+.action-option-text:focus {
+  color: #000 !important;
+  text-decoration: underline !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.payment-portal-link,
+.action-option-text {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.payment-portal-link::-moz-focus-inner,
+.action-option-text::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+:root {
+  --focus-ring: transparent;
+}
+
+.payment-portal-link:focus-visible,
+.action-option-text:focus-visible {
+  outline: 2px solid rgba(0,0,0,0.12);
+  outline-offset: 2px;
+}
+
+.panel-title-bar.od-card__title {
+  position: relative;
+}
+
+.payment-container {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.action-option-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.payment-action-card {
+  left: 0;
+  right: auto;
+  transform-origin: top left;
+}
+
+.payment-action-card.pinned-right {
+  left: auto;
+  right: 0;
+  transform-origin: top right;
+}
+
+/* ----------------- Scoped (reusable) payment-block styles - keep originals but add scoped selectors ----------------- */
+
+.payment-block {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.payment-block__trigger {
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  display: inline-block;
+  color: #000;
+}
+
+.payment-block__card {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  outline: none;
+  margin-top: 8px;
+  width: 150%;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 1px solid #e0e0e0;
+  display: none;
+  z-index: 9999;
+  transform-origin: top left;
+  transform: scaleY(0.96);
+  transition: transform 0.14s ease, opacity 0.12s ease;
+  opacity: 0;
+}
+
+.payment-block__card.is-visible {
+  display: block;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.payment-block__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.payment-block__list .action-option-item {
+  padding: 12px 16px;
+  /* border-bottom: 1px solid #D1D1D1; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+}
+
+.payment-block__list .action-option-item:last-child {
+  border-bottom: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.payment-block__list .action-option-item:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.payment-block__list .action-option-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: #000;
+  font-size: 14px;
+  display: block;
+}
+
+.payment-block__card.pinned-right {
+  left: auto;
+  right: 0;
+  transform-origin: top right;
+}
+
+/* Force black color for all tracking/payment links in every state */
+a.track-path-link,
+a.track-path-link:link,
+a.track-path-link:visited,
+a.track-path-link:active,
+a.track-path-link:hover,
+a.track-path-link:focus,
+a.payment-portal-link,
+a.payment-portal-link:link,
+a.payment-portal-link:visited,
+a.payment-portal-link:active,
+a.payment-portal-link:hover,
+a.payment-portal-link:focus,
+a.action-option-text,
+a.action-option-text:link,
+a.action-option-text:visited,
+a.action-option-text:active,
+a.action-option-text:hover,
+a.action-option-text:focus {
+  color: #000 !important;
+  text-decoration: underline !important;
+  background: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.od-status__item {
+  position: relative;
+}
+
+.status-action-card {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  display: none;
+  z-index: 10;
+}
+
+.status-action-card.active {
+  display: block;
+}
+
+
+.visually-hidden-trigger {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  height: 0;
+  background: transparent;
+  color: transparent;
+  position: absolute;
+  left: -9999px;
+  overflow: hidden;
+}
+
+
+.status-trigger-btn {
+  margin-left: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  color: #333;
+}
+.status-trigger-btn:hover {
+  color: #000;
+}
+
+#proforma .payment-block__card dialog-only{
+    max-width: 150px;
+}
+
+.order-col-actions .action-trigger , .order-col .action-trigger{
+  text-decoration: underline;
+  text-underline-offset: 1px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #000;
+  cursor: pointer;
+}
+
+
+.action-link {
+  color: inherit;        /* remove underline */
+  cursor: pointer;     /* optional, make it bolder if you want */
+}
+
+.payment-block .action-link {
+    color: inherit;       /* remove underline */
+    cursor: pointer;       /* show pointer on hover */
+}
+
+.payment-block .action-link:hover {
+    color: inherit; 
+}
+
+a{
+    color: #000;
+}
+
+.action-option-list.payment-block__list > .action-option-item:last-child {
+  /* This border will appear on the last <li> of the target <ul> */
+  border-bottom: 1px solid #D1D1D1;
+}
+.od-field__select {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.od-select {
+    width: 100%;
+    appearance: none; /* hides native arrow */
+}
+
+.dropdown-arrow {
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+}
+
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.custom-dropdown-toggle {
+  display: flex;
+  align-items: center;  gap: 12px;
+}
+
+.custom-dropdown-menu {
+  display: none; /* hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  min-width: 120px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+.custom-dropdown-menu li {
+  padding: 6px 12px;
+}
+
+.custom-dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.custom-dropdown-arrow path {
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.custom-dropdown-arrow {
+  width: 12px;   /* arrow width */
+  height: auto;   /* arrow height */
+}
