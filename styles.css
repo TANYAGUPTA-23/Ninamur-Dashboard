@@ -144,8 +144,6 @@ font-size: 13px;
     cursor: pointer;
     font-size: 15px;
     font-weight: 500;
-    transition: background-color 0.15s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .od-chat-label {
@@ -264,7 +262,6 @@ font-size: 13px;
     align-items: center;
     gap: 12px;
     font-size: 12px;
-    font-weight: 500;
     text-transform: uppercase;
     color: #000000;
 }
@@ -437,7 +434,7 @@ option {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 12px;
+  padding: 10px 12px;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
@@ -1054,9 +1051,35 @@ font-size: 19px;
     .summary-item {
       display: flex;
       align-items: center;
-      gap: 29px;
+      gap: 15px;
       min-width: 160px;
     }
+
+    .summary-left{
+
+      gap: 29px;
+    }
+
+    .input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.discount-input {
+  padding-right: 25px; /* make space for the % sign */
+  width: 80px; /* adjust as needed */
+  box-sizing: border-box;
+}
+
+.input-suffix {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  pointer-events: none; /* so clicking input still works */
+}
+
 
     .summary-label {
       font-size: 14px;
@@ -1419,7 +1442,6 @@ input[type="checkbox"]:checked::after {
     background-color: #ffffff;
     border-radius: 12px;
     padding: 20px 25px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .logistics-box {
@@ -1501,7 +1523,7 @@ padding: 16px;
   border: 1px solid #EBEBEB;
   padding: 8px;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: #333;
   display: flex;
@@ -1571,7 +1593,7 @@ padding: 16px;
     flex: 1;
 }
 .logistics-box .field-container.data-group-col-small {
-    gap: 12px;
+    gap: 19px;
     /* flex: 1; */
 }
 
@@ -1674,7 +1696,7 @@ padding: 16px;
   color: #000;
   cursor: pointer;
   font-family: "Inter", sans-serif;
-  padding-right: 28px; /* leaves space for the icon */
+  padding-right: 12px; /* leaves space for the icon */
 }
 .od-date-field {
   display: flex;
@@ -1772,7 +1794,7 @@ padding: 16px;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 6px 10px;
+  padding: 10px 8px;
   width: fit-content;
   gap: 6px;
 }
@@ -1930,6 +1952,13 @@ padding: 16px;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     text-align: center;
+}
+
+
+/* Add vertical separator after 2nd column items */
+.payment-schedule-grid > div:nth-child(2) {
+  padding-right: 12px;
+    border-right: 1px solid #E5E5E5;
 }
 
 .schedule-entry-unit {
@@ -2343,6 +2372,7 @@ padding-top: 10px;
 padding-right: 16px;
 padding-bottom: 10px;
 padding-left: 16px;
+    border: 1px solid #EBEBEB;
 
 
 }
@@ -2831,14 +2861,27 @@ letter-spacing: 0%;
 
 .action-option-list {
   list-style: none;
-  padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 8px 12px;
 }
 
 .action-option-item {
-  padding: 12px 16px;
   white-space: nowrap;
 }
+
+.payment-action-card > ul:first-of-type > li {
+    transition: background-color 0.3s ease; /* smooth transition */
+    cursor: pointer; /* shows pointer on hover */
+}
+
+/* Target only the first ul inside each payment-action-card */
+.payment-action-card > ul:first-of-type:hover {
+    background-color: #f5f5f5;
+}
+
 
 .od-status__item label.od-status__label {
   display: flex;
@@ -2853,7 +2896,7 @@ letter-spacing: 0%;
 }
 
 .action-option-item {
-  padding: 12px 16px;
+  /* padding: 12px 16px; */
   /* border-bottom: 1px solid #D1D1D1; */
   white-space: nowrap;
   overflow: hidden;
@@ -2868,7 +2911,7 @@ letter-spacing: 0%;
 
 .action-option-item:last-child {
   border-bottom: none;
-  border-radius: 0 0 8px 8px;
+  /* border-radius: 0 0 10px 10px; */
 }
 
 .action-option-item:first-child {
@@ -2985,10 +3028,8 @@ letter-spacing: 0%;
   outline: none;
   margin-top: 8px;
   width: 150%;
-  max-width: 300px;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 10px;
   border: 1px solid #e0e0e0;
   display: none;
   z-index: 9999;
@@ -3006,12 +3047,15 @@ letter-spacing: 0%;
 
 .payment-block__list {
   list-style: none;
-  padding: 0;
   margin: 0;
+      border-bottom: 1px solid #D1D1D1;
+}
+
+.payment-action-card ul:last-child {
+    border-bottom: none;
 }
 
 .payment-block__list .action-option-item {
-  padding: 12px 16px;
   /* border-bottom: 1px solid #D1D1D1; */
   white-space: nowrap;
   overflow: hidden;
@@ -3022,11 +3066,11 @@ letter-spacing: 0%;
 
 .payment-block__list .action-option-item:last-child {
   border-bottom: none;
-  border-radius: 0 0 8px 8px;
+  /* border-radius: 0 0 10px 10px; */
 }
 
 .payment-block__list .action-option-item:first-child {
-  border-radius: 8px 8px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 .payment-block__list .action-option-text {
@@ -3149,7 +3193,6 @@ a{
 
 .action-option-list.payment-block__list > .action-option-item:last-child {
   /* This border will appear on the last <li> of the target <ul> */
-  border-bottom: 1px solid #D1D1D1;
 }
 .od-field__select {
     position: relative;
@@ -3269,4 +3312,11 @@ a{
 .selector-box.rate-selector{
   width: 80%;
 }
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;                /* remove focus outline */
+    box-shadow: none;             /* remove any shadow */
 }

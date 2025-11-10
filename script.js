@@ -646,3 +646,35 @@ document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
     }
   });
 });
+
+
+const orderTabs = document.querySelectorAll('.order-tab');
+const summaryText = document.querySelector('.order-summary-text');
+
+orderTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Remove active class from all tabs
+    orderTabs.forEach(t => t.classList.remove('order-tab-active'));
+    orderTabs.forEach(t => t.classList.add('order-tab-inactive'));
+
+    // Add active class to clicked tab
+    tab.classList.add('order-tab-active');
+    tab.classList.remove('order-tab-inactive');
+
+    // Show/hide summary text based on clicked tab
+    if (tab.textContent.includes('Extras')) {
+      summaryText.style.display = 'none';
+    } else {
+      summaryText.style.display = 'block';
+    }
+  });
+});
+
+const input = document.getElementById('discountInput');
+input.addEventListener('input', () => {
+  // Remove any existing % and append it
+  let val = input.value.replace('%', '');
+  if(val !== '') {
+    input.value = val + '%';
+  }
+});
